@@ -1,0 +1,305 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=42dot+Sans:wght@300..800&display=swap");
+
+/* COMMON CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat";
+}
+
+ol,
+li,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* 화면 전체 container */
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.container::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+/* 화면 왼쪽 배경화면 container */
+.container .bgSection {
+  float: left;
+  width: 62%;
+}
+
+.container .bgSection #frame {
+  width: 100%;
+  height: 100vh;
+}
+
+.container .bgSection #frame .panels {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 62%;
+  height: 100%;
+}
+
+.container .bgSection #frame .panels li {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.container .bgSection #frame .panels li.on img {
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+.container .bgSection #frame .panels li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1);
+  transition: opacity 0.5s, transform 4s;
+}
+
+.container .bgMobile {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container .bgMobile figure {
+  width: 100%;
+  height: 100%;
+}
+
+.container .bgMobile figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container .mask {
+  width: 62%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+/* 화면 오른쪽 로그인 container */
+.container .loginCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  width: 38%;
+  height: 100vh;
+}
+
+.container .loginCont .login {
+  position: absolute;
+  width: 20%;
+  height: 56%;
+  min-height: 500px;
+  text-align: center;
+  border-radius: 30px;
+  padding: 50px 35px;
+  border: 1px solid #eb2a31;
+}
+
+.login h2.logo::after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #003377;
+}
+
+.login h2.logo img {
+  width: 240px;
+  margin-bottom: 15px;
+}
+
+.login span.sublogo {
+  display: block;
+  font-size: 15px;
+  margin: 5px auto 20px;
+}
+
+.login .loginInput {
+  width: 260px;
+  margin: 10px auto;
+}
+
+.login .loginInput::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.login .loginInput input[type=text],
+.login .loginInput input[type=password] {
+  width: 100%;
+  height: 35px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  margin-bottom: 6px;
+}
+
+.login .loginInput input[type=text]::placeholder,
+.login .loginInput input[type=password]::placeholder {
+  padding-left: 7px;
+}
+
+.login .loginInput select {
+  width: 100%;
+  height: 25px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 6px;
+}
+
+.login .loginInput select:valid {
+  padding-left: 5px;
+  color: #777;
+}
+
+.login .loginInput .loginBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  width: 100%;
+  height: 36px;
+  font-size: 14px;
+  background-color: #eb2a31;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login .loginNav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.login .searchPwd,
+.login .saveId {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  gap: 5px;
+}
+
+.login .searchPwd a,
+.login .saveId {
+  font-family: "42dot Sans", serif;
+  font-size: 14px;
+  color: #000;
+}
+
+.login .searchPwd:hover a {
+  color: crimson;
+}
+
+.login .notice p {
+  font-size: 13px;
+  margin-bottom: 15px;
+  font-family: "42dot Sans", serif;
+}
+
+.login .notice span {
+  font-size: 11px;
+}
+
+@media screen and (max-width: 1288px) {
+  .login {
+    left: 52%;
+    width: 40%;
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .container {
+    width: 100%;
+  }
+
+  .container::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  .container .bgSection {
+    display: none;
+  }
+
+  .container .bgMobile {
+    display: block;
+  }
+
+  .login {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 340px;
+    height: 70%;
+    padding: 20px 10px;
+  }
+
+  .login span.logo {
+    margin: 5px auto 40px;
+  }
+
+  .login .loginInput input {
+    height: 30px;
+    margin-bottom: 5px;
+  }
+
+  .login .loginInput a {
+    width: 80px;
+    height: 75px;
+  }
+
+  .login .searchPwd,
+  .login .saveId {
+    margin-top: 5px;
+  }
+
+  .login .searchPwd a,
+  .login .saveId {
+    margin-left: 10px;
+    font-size: 12px;
+  }
+
+  .login .notice {
+    font-size: 14px;
+  }
+}
