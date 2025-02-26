@@ -238,11 +238,9 @@ button {
   font-size: 11px;
 }
 
-@media screen and (max-width: 1288px) {
-  .login {
-    left: 52%;
-    width: 40%;
-    padding: 30px;
+@media screen and (max-width: 1600px) {
+  .container .loginCont .login {
+    width: 30%;
   }
 }
 
@@ -270,22 +268,14 @@ button {
     left: 50%;
     transform: translate(-50%, -50%);
     min-width: 340px;
-    height: 70%;
+    height: 90%;
     padding: 20px 10px;
-  }
-
-  .login span.logo {
-    margin: 5px auto 40px;
+    background-color: #fff;
   }
 
   .login .loginInput input {
     height: 30px;
     margin-bottom: 5px;
-  }
-
-  .login .loginInput a {
-    width: 80px;
-    height: 75px;
   }
 
   .login .searchPwd,
@@ -297,9 +287,5 @@ button {
   .login .saveId {
     margin-left: 10px;
     font-size: 12px;
-  }
-
-  .login .notice {
-    font-size: 14px;
   }
 }

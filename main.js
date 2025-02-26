@@ -14,16 +14,6 @@ window.onload = () => {
   startRolling();
 };
 
-// window.addEventListener("resize", () => {
-//   if (window.innerWidth >= 1200) {
-//     bgSection.classList.add('on');
-//     bgMobile.classList.remove('on');
-//   } else {
-//     bgMobile.classList.add('on');
-//     bgSection.classList.remove('on');
-//   }
-// })
-
 //패널 활성화함수
 function activation(index) {
   for (const el of panels) el.classList.remove('on');
