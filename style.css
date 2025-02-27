@@ -80,7 +80,7 @@ button {
   object-fit: cover;
   opacity: 0;
   transform: scale(1);
-  transition: opacity 0.5s, transform 4s;
+  transition: opacity 0.8s, transform 4s;
 }
 
 .container .bgMobile {
