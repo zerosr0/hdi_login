@@ -249,6 +249,7 @@ button {
 @media screen and (max-width: 1600px) {
   .container .loginCont .login {
     width: 30%;
+    padding: 35px;
   }
 }
 
