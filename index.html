@@ -30,7 +30,7 @@
           <div class="loginInput">
             <input type="text" class="user" placeholder="User ID">
             <input type="password" class="password" placeholder="Password">
-            <input type="text" class="otp" placeholder="OTP">
+            <input type="text" class="otpNum" placeholder="OTP">
             <select name="lang" id="lang">
               <option value="eng">Korean</option>
               <option value="kor">English</option>
@@ -40,10 +40,30 @@
               <div class="saveId">
                 <input type="checkbox" name="" id="">아이디 저장
               </div>
-              <div class="searchPwd">
-                <img class="icon" src="img/search_pwd.png" alt="search password icon">
-                <a href="#">비밀번호 재설정</a>
+              <span class="otpNumBtn">OTP입력</span>
+              <button class="otpRegBtn">OTP등록</button>
+            </div>
+            <div id="otpReg">
+              <img id="imgQrCode" src="" alt="">
+              <div class="inputWrap">
+                <span>ID(사번)</span>
+                <input type="text" name="" id="" placeholder="(employee number)">
               </div>
+              <div class="inputWrap">
+                <span>Password</span>
+                <input type="password" name="" id="">
+              </div>
+              <div class="inputWrap">
+                <span>OTP KEY</span>
+                <input type="text" name="" id="">
+                <button id="btnCreateOtp" class="otpBtn">CREATE</button>
+              </div>
+              <div class="inputWrap">
+                <span>OTP TEST</span>
+                <input type="text" name="" id="">
+                <button id="btnConfirmOtp" class="otpBtn">CONFIRM</button>
+              </div>
+              <button id="btnRegOtp">OTP Registration</button>
             </div>
             <div class="notice">
               <p>시스템 정보는 당사 업무처리 이외의 사용 및<br> 외부 유출을 금하며,
@@ -58,5 +78,27 @@
 
   </section>
 </body>
+<script>
+  let otpRegBtn = document.querySelector('.otpRegBtn');
+  let otpRegForm = document.querySelector('#otpReg');
+  let otpNumBtn = document.querySelector('.otpNumBtn');
+  let otpNumInput = document.querySelector('input.otpNum');
+  let notice = document.querySelector('.notice');
+  let imgQrCode = document.querySelector('#imgQrCode');
+  let btnCreateOtp = document.querySelector('#btnCreateOtp')
+
+  otpNumBtn.addEventListener("click", () => {
+    otpNumInput.classList.toggle("on");
+  })
+
+  otpRegBtn.addEventListener("click", () => {
+    notice.classList.toggle("on");
+    otpRegForm.classList.toggle("on");
+  })
+
+  btnCreateOtp.addEventListener("click", () => {
+    imgQrCode.classList.add("on");
+  })
+</script>
 
 </html>

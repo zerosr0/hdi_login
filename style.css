@@ -18,14 +18,6 @@ a {
   text-decoration: none;
 }
 
-button {
-  border: none;
-}
-
-.icon {
-  width: 20px;
-  height: 20px;
-}
 
 /* 화면 전체 container */
 .container {
@@ -106,6 +98,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   float: left;
   width: 38%;
   height: 100vh;
@@ -113,8 +106,7 @@ button {
 
 .container .loginCont .login {
   position: absolute;
-  width: 20%;
-  height: 59%;
+  width: 54%;
   min-height: 500px;
   text-align: center;
   border-radius: 30px;
@@ -177,10 +169,14 @@ button {
   text-indent: 25px;
 }
 
-.otp::-webkit-input-placeholder {
+.otpNum::-webkit-input-placeholder {
   background: url(./img/otp.png) 4px 2px no-repeat;
   background-size: 24px;
   text-indent: 25px;
+}
+
+.otpNum.on {
+  display: none;
 }
 
 .login .loginInput select {
@@ -207,33 +203,104 @@ button {
   font-size: 14px;
   background-color: #eb2a31;
   border-radius: 5px;
+  border: none;
   cursor: pointer;
 }
 
 .login .loginNav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-top: 8px;
   margin-bottom: 30px;
 }
 
-.login .searchPwd,
 .login .saveId {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
   gap: 5px;
 }
 
-.login .searchPwd a,
-.login .saveId {
+.login #otpReg {
+  display: none;
+  position: relative;
+}
+
+.login #otpReg.on {
+  display: block;
+  width: 150%;
+  margin-left: -25%;
+  background-color: #eee;
+  padding: 10px;
+  border-radius: 10px;
+  ;
+}
+
+.login #otpReg #imgQrCode {
+  display: none;
+  position: absolute;
+  top: 5px;
+  left: -150px;
+  width: 150px;
+  height: 150px;
+  /* background-color: #999; */
+}
+
+.login #otpReg #imgQrCode.on {
+  display: block;
+}
+
+.login #otpReg .inputWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 3px;
+}
+
+.login #otpReg .inputWrap input {
+  width: 210px;
+}
+
+.login #otpReg .inputWrap:nth-of-type(1) input,
+.login #otpReg .inputWrap:nth-of-type(2) input {
+  width: 295px;
+}
+
+.login #otpReg .inputWrap span {
+  width: 60px;
+  font-size: 12px;
+}
+
+.login #otpReg .inputWrap .otpBtn {
+  position: relative;
+  width: 75px;
+  height: 33px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  margin-bottom: 6px;
+}
+
+.login .otpRegBtn,
+.login .saveId,
+.login .otpNumBtn {
   font-family: "42dot Sans", serif;
   font-size: 14px;
   color: #000;
+  background: transparent;
+  cursor: pointer;
+  border: none;
 }
 
-.login .searchPwd:hover a {
+.login .otpRegBtn:hover,
+.login .otpNumBtn:hover {
   color: #eb2a31;
+}
+
+.login .notice.on {
+  display: none;
 }
 
 .login .notice p {
@@ -247,13 +314,27 @@ button {
 }
 
 @media screen and (max-width: 1600px) {
+  .container .bgSection {
+    width: 68%;
+  }
+
+  .container .bgSection #frame .panels {
+    width: 68%;
+  }
+
+  .container .loginCont {
+    width: 32%;
+    right: 0;
+  }
+
   .container .loginCont .login {
-    width: 30%;
+    width: 80%;
     padding: 35px;
   }
+
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1200px) {
   .container {
     width: 100%;
   }
@@ -274,7 +355,6 @@ button {
 
   .container .bgMobile li {
     height: 100%;
-
   }
 
   .container .bgMobile img {
@@ -284,17 +364,19 @@ button {
   }
 
   .container .loginCont {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     float: none;
     height: 90%;
   }
 
-  .login {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  .container .loginCont .login {
+    width: 40%;
     min-width: 340px;
     height: 90%;
-    padding: 20px 10px;
+    padding: 30px 10px;
     background-color: #fff;
   }
 
@@ -303,13 +385,9 @@ button {
     margin-bottom: 5px;
   }
 
-  .login .searchPwd,
+  .login .otpReg,
   .login .saveId {
     margin-top: 5px;
-  }
-
-  .login .searchPwd a,
-  .login .saveId {
     margin-left: 10px;
     font-size: 12px;
   }
