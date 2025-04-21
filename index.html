@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>THINKWARE QMS PORTAL</title>
+  <title>SOLVA QMS PORTAL</title>
   <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
 </head>
 
 <body>
@@ -14,7 +15,9 @@
       <div class="bgSection">
         <figure id="frame">
           <ul class="panels">
-            <li class="on"><img src="img/main_bg.png" alt="main background3"></li>
+            <li class="on"><img src="img/main_bg1.png" alt="main background1"></li>
+            <li><img src="img/main_bg2.png" alt="main background2"></li>
+            <li><img src="img/main_bg3.png" alt="main background3"></li>
           </ul>
         </figure>
       </div>
@@ -66,9 +69,9 @@
               <button id="btnRegOtp">OTP Registration</button>
             </div>
             <div class="notice">
-              <p>시스템 정보는 당사 업무처리 이외의 사용 및<br> 외부 유출을 금하며,
-                당사의 승인없이 정보 유출 시<br> 법적 제재를 받을 수 있습니다.</p>
-              <span>Copyright ⓒ 2025<br>THINKWARE ALL RIGHTS RESERVED.</span>
+              <p>시스템 정보는 당사 업무처리 이외의 사용 및 외부 유출을 금하며,
+                당사의 승인없이 정보 유출 시 법적 제재를 받을 수 있습니다.</p>
+              <span>Copyright ⓒ 2025<br>SOLVA TECHNOLOGY ALL RIGHTS RESERVED.</span>
             </div>
           </div>
         </div>
@@ -78,40 +81,5 @@
 
   </section>
 </body>
-<script>
-  let otpRegBtn = document.querySelector('.otpRegBtn');
-  let otpRegForm = document.querySelector('#otpReg');
-  let otpNumBtn = document.querySelector('.otpNumBtn');
-  let otpNumInput = document.querySelector('input.otpNum');
-  let notice = document.querySelector('.notice');
-  let imgQrCode = document.querySelector('#imgQrCode');
-  let btnCreateOtp = document.querySelector('#btnCreateOtp')
-
-  //OTP입력 버튼 클릭 시 OTP 입력 input창 토글& login 클래스 높이 자동 조정
-  otpNumBtn.addEventListener("click", () => {
-    otpNumInput.classList.toggle("on");
-    if (otpNumInput.classList.contains("on")) {
-      otpNumBtn.style.color = '#eb2a31';
-    } else {
-      otpNumBtn.style.color = 'black';
-    }
-  })
-
-  //OTP등록 버튼 클릭 시 OTP등록창 생성
-  otpRegBtn.addEventListener("click", () => {
-    notice.classList.toggle("on");
-    otpRegForm.classList.toggle("on");
-    if (otpRegForm.classList.contains("on")) {
-      otpRegBtn.style.color = '#eb2a31';
-    } else {
-      otpRegBtn.style.color = 'black';
-    }
-  })
-
-  //OTP등록창에서 CREATE 버튼 클릭 시 이미지창 생성
-  btnCreateOtp.addEventListener("click", () => {
-    imgQrCode.classList.add("on");
-  })
-</script>
 
 </html>
