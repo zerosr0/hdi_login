@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOLVA QMS PORTAL</title>
+  <link rel="stylesheet" href="loginStyle.css">
+  <script defer src="main.js"></script>
+</head>
+
+<body>
+  <section>
+    <div class="container">
+      <div class="bgSection">
+        <figure id="frame">
+          <ul class="panels">
+            <li class="on"><img src="img/main_bg1.png" alt="main background1"></li>
+            <li><img src="img/main_bg2.png" alt="main background2"></li>
+            <li><img src="img/main_bg3.png" alt="main background3"></li>
+          </ul>
+        </figure>
+      </div>
+      <div class="bgMobile">
+        <figure>
+          <li><img src="img/mb_main_bg2.png" alt="main background2"></li>
+        </figure>
+      </div>
+      <div class="loginCont">
+        <div class="login">
+          <h2 class="logo"><img src="img/logo.png" alt="logo"></h2>
+          <span class="sublogo">QMS LOGIN</span>
+          <div class="loginInput">
+            <input type="text" class="user" placeholder="User ID">
+            <input type="password" class="password" placeholder="Password">
+            <input type="text" class="otpNum" placeholder="OTP">
+            <select name="lang" id="lang">
+              <option value="eng">Korean</option>
+              <option value="kor">English</option>
+            </select>
+            <button class="loginBtn" href="#">LOGIN</button>
+            <div class="loginNav">
+              <div class="saveId">
+                <input type="checkbox" name="" id="">아이디 저장
+              </div>
+              <span class="otpNumBtn">OTP입력</span>
+              <button class="otpRegBtn">OTP등록</button>
+            </div>
+            <div id="otpReg">
+              <img id="imgQrCode" src="" alt="">
+              <div class="inputWrap">
+                <span>ID(사번)</span>
+                <input type="text" name="" id="" placeholder="(employee number)">
+              </div>
+              <div class="inputWrap">
+                <span>Password</span>
+                <input type="password" name="" id="">
+              </div>
+              <div class="inputWrap">
+                <span>OTP KEY</span>
+                <input type="text" name="" id="">
+                <button id="btnCreateOtp" class="otpBtn">CREATE</button>
+              </div>
+              <div class="inputWrap">
+                <span>OTP TEST</span>
+                <input type="text" name="" id="">
+                <button id="btnConfirmOtp" class="otpBtn">CONFIRM</button>
+              </div>
+              <button id="btnRegOtp">OTP Registration</button>
+            </div>
+            <div class="notice">
+              <p>시스템 정보는 당사 업무처리 이외의 사용 및 외부 유출을 금하며,
+                당사의 승인없이 정보 유출 시 법적 제재를 받을 수 있습니다.</p>
+              <span>Copyright ⓒ 2025<br>SOLVA TECHNOLOGY ALL RIGHTS RESERVED.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+</body>
+
+</html>

@@ -1,411 +1,122 @@
-@font-face {
-  font-family: 'junggothic';
-  src: url('./junggothic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
-/* COMMON CSS */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-ol,
-li,
-ul {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-
-/* 화면 전체 container */
-.container {
-  position: relative;
-  width: 100%;
+body.spc-intro {
   height: 100vh;
-}
-
-.container::after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-
-/* 화면 왼쪽 배경화면 container */
-.container .bgSection {
-  float: left;
-  width: 62%;
-}
-
-.container .bgSection #frame {
-  width: 100%;
-  height: 100vh;
-}
-
-.container .bgSection #frame .panels {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 63%;
-  height: 100%;
-}
-
-.container .bgSection #frame .panels li {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-}
-
-.container .bgSection #frame .panels li.on img {
-  opacity: 1;
-  transform: scale(1.03);
-}
-
-.container .bgSection #frame .panels li img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transform: scale(1);
-  transition: opacity 0.8s, transform 4s;
-}
-
-.container .bgMobile {
-  display: none;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.container .bgMobile figure {
-  width: 100%;
-  height: 100%;
-}
-
-.container .bgMobile figure img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* 화면 오른쪽 로그인 container */
-.container .loginCont {
+  /* background: linear-gradient(to right, #004D99, #00C853); */
+  background: #f5f5f5;
+  font-family: 'Inter', sans-serif;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  position: relative;
-  float: left;
-  width: 37%;
-  height: 100vh;
+  justify-content: center;
+  color: #292929;
+  transition: background 0.8s ease-in-out, background-color 0.8s ease-in-out, background-image 0.8s ease-in-out;
 }
 
-.container .loginCont .login {
-  position: absolute;
-  width: 54%;
-  min-height: 500px;
+.spc-intro h1 {
   text-align: center;
-  border-radius: 30px;
-  padding: 25px 35px;
-  border: 1px solid #252C66;
-}
-
-.login h2.logo::after {
-  display: block;
-  content: "";
-  width: 100%;
-  height: 1px;
-  background-color: #003377;
-}
-
-.login h2.logo img {
-  width: 100px;
-  margin-bottom: 15px;
-}
-
-.login span.sublogo {
-  display: block;
-  font-size: 15px;
-  margin: 5px auto 20px;
-}
-
-.login .loginInput {
-  width: 260px;
-  margin: 10px auto;
-}
-
-.login .loginInput::after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-.login .loginInput input[type=text],
-.login .loginInput input[type=password] {
-  width: 100%;
-  height: 35px;
-  border: 1px solid #999;
-  border-radius: 5px;
-  margin-bottom: 6px;
-}
-
-.login .loginInput input[type=text]::placeholder,
-.login .loginInput input[type=password]::placeholder {
-  padding-left: 7px;
-}
-
-.user::-webkit-input-placeholder {
-  background: url(./img/user.png) 6px 0 no-repeat;
-  text-indent: 25px;
-}
-
-.password::-webkit-input-placeholder {
-  background: url(./img/password.png) 4px 2px no-repeat;
-  background-size: 23px;
-  text-indent: 25px;
-}
-
-.otpNum::-webkit-input-placeholder {
-  background: url(./img/otp.png) 4px 2px no-repeat;
-  background-size: 24px;
-  text-indent: 25px;
-}
-
-.otpNum.on {
-  display: none;
-}
-
-.login .loginInput select {
-  width: 100%;
-  height: 25px;
-  border: 1px solid #999;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-bottom: 6px;
-}
-
-.login .loginInput select:valid {
-  padding-left: 5px;
-  color: #777;
-}
-
-.login .loginInput .loginBtn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  width: 100%;
-  height: 36px;
-  font-size: 14px;
-  background-color: #252C66;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-}
-
-.login .loginNav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: nowrap;
-  margin-top: 8px;
   margin-bottom: 30px;
 }
 
-.login .saveId {
+.spc-intro .login-wrapper {
+  gap: 60px;
+  padding: 60px 80px;
+  /* background: linear-gradient(to right, #004D99, #00C853);
+  backdrop-filter: blur(60px);
+  -webkit-backdrop-filter: blur(60px); */
+  background: #fff;
+  ;
+  border-radius: 24px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+}
+
+.spc-intro .login-wrapper.partner-hover {
+  background: linear-gradient(to right bottom, #1d8cf8, #0b1126);
+}
+
+.spc-intro .login-wrapper.root-hover {
+  background: linear-gradient(to right bottom, #00f2c3, #154625);
+}
+
+.spc-intro .login-cards {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 30px;
 }
 
-/* OTP 등록화면 */
-.login #otpReg {
-  display: none;
-  position: relative;
+.spc-intro .login-card {
+  width: 380px;
+  padding: 50px 40px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.04);
+  text-align: center;
+  transition: transform 0.3s ease;
+  margin-bottom: 25px;
 }
 
-.login #otpReg.on {
-  display: block;
-  width: 150%;
-  margin-left: -25%;
-  background-color: #eee;
-  padding: 10px;
-  border-radius: 10px;
+.spc-intro .login-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.15);
+}
+
+.spc-intro .login-card.partner {
+  background: linear-gradient(to right, #499cf0, #3358f4);
+  box-shadow: 0 0 12px rgba(29, 140, 248, 0.4);
+}
+
+.spc-intro .login-card.partner:hover {
+  box-shadow: 0 0 20px rgba(29, 140, 248, 0.8);
+}
+
+.spc-intro .login-card.root {
+  background: linear-gradient(to right, #43e97b, #38f9d7);
+  box-shadow: 0 0 16px rgba(0, 242, 195, 0.4);
+}
+
+.spc-intro .login-card.root:hover {
+  box-shadow: 0 0 28px rgba(0, 242, 195, 0.8);
+}
+
+.spc-intro .login-card h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.spc-intro .login-btn {
+  padding: 16px 36px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #fff;
+  color: #292929;
+  border-radius: 32px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.spc-intro .customer-support {
+  margin-bottom: 20px;
+}
+
+.spc-intro .access-warning {
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 30px;
   ;
 }
 
-.login #otpReg #imgQrCode {
-  display: none;
-  position: absolute;
-  top: 5px;
-  left: -150px;
-  width: 150px;
-  height: 150px;
-}
-
-.login #otpReg #imgQrCode.on {
-  display: block;
-}
-
-.login #otpReg .inputWrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: nowrap;
-  gap: 3px;
-}
-
-.login #otpReg .inputWrap input {
-  width: 210px;
-}
-
-.login #otpReg .inputWrap:nth-of-type(1) input,
-.login #otpReg .inputWrap:nth-of-type(2) input {
-  width: calc(100% - 72px);
-}
-
-.login #otpReg .inputWrap span {
-  width: 60px;
+.spc-intro .footer {
   font-size: 12px;
-}
-
-.login #otpReg .inputWrap .otpBtn {
-  position: relative;
-  width: 75px;
-  height: 33px;
-  border: 1px solid #999;
-  border-radius: 5px;
-  margin-bottom: 6px;
-}
-
-.login #otpReg #btnRegOtp {
-  width: 100%;
-  height: 35px;
-  border: 1px solid #999;
-  border-radius: 5px;
-  margin-bottom: 6px;
-}
-
-.login .otpRegBtn,
-.login .saveId,
-.login .otpNumBtn {
-  font-size: 14px;
-  color: #000;
-  background: transparent;
-  cursor: pointer;
-  border: none;
-}
-
-.login .otpRegBtn:hover,
-.login .otpNumBtn:hover {
-  color: #eb2a31;
-}
-
-.login .notice.on {
-  display: none;
-}
-
-.login .notice p {
-  font-size: 13px;
-  margin-bottom: 15px;
-}
-
-.login .notice span {
-  font-size: 11px;
-}
-
-@media screen and (max-width: 1600px) {
-  .container .bgSection {
-    width: 68%;
-  }
-
-  .container .bgSection #frame .panels {
-    width: 68%;
-  }
-
-  .container .loginCont {
-    width: 32%;
-    right: 0;
-  }
-
-  .container .loginCont .login {
-    width: 80%;
-    padding: 35px;
-  }
-
-}
-
-@media screen and (max-width: 1255px) {
-  .container {
-    width: 100%;
-  }
-
-  .container::after {
-    content: "";
-    display: block;
-    clear: both;
-  }
-
-  .container .bgSection {
-    display: none;
-  }
-
-  .container .bgMobile {
-    display: block;
-  }
-
-  .container .bgMobile li {
-    height: 100%;
-  }
-
-  .container .bgMobile img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .container .loginCont {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    float: none;
-    height: 90%;
-  }
-
-  .container .loginCont .login {
-    width: 40%;
-    min-width: 340px;
-    height: 90%;
-    padding: 30px 10px;
-    background-color: #fff;
-  }
-
-  .login .loginInput input {
-    height: 30px;
-    margin-bottom: 5px;
-  }
-
-  .login .otpReg,
-  .login .saveId {
-    margin-top: 5px;
-    margin-left: 10px;
-    font-size: 12px;
-  }
-}
-
-@media screen and (max-width: 720px) {
-  .login #otpReg #imgQrCode {
-    top: -150px;
-    left: 0px;
-  }
+  text-align: center;
 }
