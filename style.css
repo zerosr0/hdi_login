@@ -51,6 +51,7 @@ body.spc-intro {
 
 .spc-intro .login-card {
   width: 380px;
+  max-height: 260px;
   padding: 40px;
   border-radius: 24px;
   background: rgba(255, 255, 255, 0.06);
