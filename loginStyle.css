@@ -108,27 +108,21 @@ a {
   min-height: 500px;
   text-align: center;
   border-radius: 30px;
-  padding: 25px 35px;
+  padding: 35px 20px;
   border: 1px solid #252C66;
 }
 
-.login h2.logo::after {
-  display: block;
-  content: "";
-  width: 100%;
-  height: 1px;
-  background-color: #003377;
+.login h2.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
 }
+
 
 .login h2.logo img {
-  width: 100px;
-  margin-bottom: 15px;
-}
-
-.login span.sublogo {
-  display: block;
-  font-size: 15px;
-  margin: 5px auto 20px;
+  width: 30px;
 }
 
 .login .loginInput {
@@ -165,16 +159,6 @@ a {
   background: url(./img/password.png) 4px 2px no-repeat;
   background-size: 23px;
   text-indent: 25px;
-}
-
-.otpNum::-webkit-input-placeholder {
-  background: url(./img/otp.png) 4px 2px no-repeat;
-  background-size: 24px;
-  text-indent: 25px;
-}
-
-.otpNum.on {
-  display: none;
 }
 
 .login .loginInput select {
@@ -221,87 +205,13 @@ a {
   gap: 5px;
 }
 
-/* OTP 등록화면 */
-.login #otpReg {
-  display: none;
-  position: relative;
-}
 
-.login #otpReg.on {
-  display: block;
-  width: 150%;
-  margin-left: -25%;
-  background-color: #eee;
-  padding: 10px;
-  border-radius: 10px;
-  ;
-}
-
-.login #otpReg #imgQrCode {
-  display: none;
-  position: absolute;
-  top: 5px;
-  left: -150px;
-  width: 150px;
-  height: 150px;
-}
-
-.login #otpReg #imgQrCode.on {
-  display: block;
-}
-
-.login #otpReg .inputWrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: nowrap;
-  gap: 3px;
-}
-
-.login #otpReg .inputWrap input {
-  width: 210px;
-}
-
-.login #otpReg .inputWrap:nth-of-type(1) input,
-.login #otpReg .inputWrap:nth-of-type(2) input {
-  width: calc(100% - 72px);
-}
-
-.login #otpReg .inputWrap span {
-  width: 60px;
-  font-size: 12px;
-}
-
-.login #otpReg .inputWrap .otpBtn {
-  position: relative;
-  width: 75px;
-  height: 33px;
-  border: 1px solid #999;
-  border-radius: 5px;
-  margin-bottom: 6px;
-}
-
-.login #otpReg #btnRegOtp {
-  width: 100%;
-  height: 35px;
-  border: 1px solid #999;
-  border-radius: 5px;
-  margin-bottom: 6px;
-}
-
-.login .otpRegBtn,
-.login .saveId,
-.login .otpNumBtn {
+.login .saveId {
   font-size: 14px;
   color: #000;
   background: transparent;
   cursor: pointer;
   border: none;
-}
-
-.login .otpRegBtn:hover,
-.login .otpNumBtn:hover {
-  color: #eb2a31;
 }
 
 .login .notice.on {
@@ -389,17 +299,9 @@ a {
     margin-bottom: 5px;
   }
 
-  .login .otpReg,
   .login .saveId {
     margin-top: 5px;
     margin-left: 10px;
     font-size: 12px;
-  }
-}
-
-@media screen and (max-width: 720px) {
-  .login #otpReg #imgQrCode {
-    top: -150px;
-    left: 0px;
   }
 }

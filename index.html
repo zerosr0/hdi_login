@@ -12,43 +12,25 @@
 
 <body class="spc-intro">
   <div class="login-wrapper">
-    <h1>Digital SPC 시스템</h1>
+    <h1><img src="img/icon-brand-ci-logo.svg" alt="">Digital SPC 시스템</h1>
     <div class="login-cards">
       <div class="login-card partner">
         <h2>협력사 포털 로그인</h2>
-        <img src="img/3.png" alt="">
-        <a href="#" class="login-btn partner">바로가기 →</a>
+        <img class="icon" src="img/3.png" alt="">
+        <a href="hdi_login.html" class="login-btn partner">바로가기 →</a>
       </div>
       <div class="login-card root">
         <h2>HDI 포털 로그인</h2>
-        <img src="img/4.png" alt="">
+        <img class="icon" src="img/4.png" alt="">
         <a href="hdi_login.html" class="login-btn root">바로가기 →</a>
       </div>
     </div>
-    <p class="customer-support">시스템 문의 : jungeun1.kim@hd.com / 070.7525.5625</p>
+    <p class="customer-support"><img src="img/자산 1.png" alt="">시스템 문의 : jungeun1.kim@hd.com / 070.7525.5625</p>
     <p class="access-warning">본 사이트는 HDI 임직원 및 인가된 사용자만 사용할 수 있으며, 사용자 접속 모니터링 및 로그를 기록하고 있습니다. <br />불법 사용 시에는 법령에
       의해 민/형사상 책임을 질 수
       있습니다.</p>
     <footer class="footer">ⓒ 2019 HD현대인프라코어 Corporation.(Heavy BG)</footer>
   </div>
 </body>
-<script>
-  const partnerBtn = document.querySelector('.login-btn.partner');
-  const hqBtn = document.querySelector('.login-btn.root');
-
-  partnerBtn.addEventListener('mouseenter', () => {
-    document.body.classList.add('partner-hover');
-  });
-  partnerBtn.addEventListener('mouseleave', () => {
-    document.body.classList.remove('partner-hover');
-  });
-
-  hqBtn.addEventListener('mouseenter', () => {
-    document.body.classList.add('root-hover');
-  });
-  hqBtn.addEventListener('mouseleave', () => {
-    document.body.classList.remove('root-hover');
-  });
-</script>
 
 </html>
